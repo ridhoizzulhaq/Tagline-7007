@@ -1,0 +1,232 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "challengeId",
+						"type": "uint256"
+					}
+				],
+				"name": "assertStateTransition",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "getOutput",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "output",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "modelHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "programHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "input",
+						"type": "bytes"
+					}
+				],
+				"name": "initOpmlRequest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "isFinalized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "challengeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "stateHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "proposeState",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "challengeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "stateHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "respondState",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "output",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "finalState",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stepCount",
+						"type": "uint256"
+					}
+				],
+				"name": "startChallenge",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "challengeId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "modelHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "programHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "uploadModel",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "output",
+						"type": "bytes"
+					}
+				],
+				"name": "uploadResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/ioPML.sol": "IOpml"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/ioPML.sol": {
+			"keccak256": "0x918194f8c82326b85769ad6674724c6ed122a4eb1cde71aa846f6572ffb3c419",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b2ea91924bcc8d4c7469f10b40751dd201b9b674b67d3abc11392d4e3f7a169f",
+				"dweb:/ipfs/QmUAEG6wuegDPJnPp3s2tAYcswEMMxy9NTstQFKYCn53Pi"
+			]
+		}
+	},
+	"version": 1
+}

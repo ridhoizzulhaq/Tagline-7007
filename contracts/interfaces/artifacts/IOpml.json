@@ -1,0 +1,251 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"assertStateTransition(uint256)": "ac860218",
+			"getOutput(uint256)": "17861f87",
+			"initOpmlRequest(bytes32,bytes32,bytes)": "c61b0b76",
+			"isFinalized(uint256)": "33727c4d",
+			"proposeState(uint256,bytes32)": "bb8632cd",
+			"respondState(uint256,bytes32)": "35803d82",
+			"startChallenge(uint256,bytes,bytes32,uint256)": "1b40abf2",
+			"uploadModel(bytes32,bytes32)": "5c3d1519",
+			"uploadResult(uint256,bytes)": "480f07c8"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "challengeId",
+					"type": "uint256"
+				}
+			],
+			"name": "assertStateTransition",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"name": "getOutput",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "output",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "modelHash",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "programHash",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes",
+					"name": "input",
+					"type": "bytes"
+				}
+			],
+			"name": "initOpmlRequest",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"name": "isFinalized",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "challengeId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "stateHash",
+					"type": "bytes32"
+				}
+			],
+			"name": "proposeState",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "challengeId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "stateHash",
+					"type": "bytes32"
+				}
+			],
+			"name": "respondState",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes",
+					"name": "output",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "finalState",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "stepCount",
+					"type": "uint256"
+				}
+			],
+			"name": "startChallenge",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "challengeId",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "modelHash",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "programHash",
+					"type": "bytes32"
+				}
+			],
+			"name": "uploadModel",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes",
+					"name": "output",
+					"type": "bytes"
+				}
+			],
+			"name": "uploadResult",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

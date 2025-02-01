@@ -1,0 +1,221 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"estimateFee(uint256,uint256)": "00e1d8d0",
+			"isFinalized(uint256)": "33727c4d",
+			"requestCallback(uint256,bytes,address,uint64,bytes)": "5b953806"
+		}
+	},
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "modelId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "input",
+					"type": "bytes"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "callbackContract",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint64",
+					"name": "gasLimit",
+					"type": "uint64"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "callbackData",
+					"type": "bytes"
+				}
+			],
+			"name": "AICallbackRequest",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "invoker",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "output",
+					"type": "bytes"
+				}
+			],
+			"name": "AICallbackResult",
+			"type": "event"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "modelId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "gasLimit",
+					"type": "uint256"
+				}
+			],
+			"name": "estimateFee",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"name": "isFinalized",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "modelId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes",
+					"name": "input",
+					"type": "bytes"
+				},
+				{
+					"internalType": "address",
+					"name": "callbackContract",
+					"type": "address"
+				},
+				{
+					"internalType": "uint64",
+					"name": "gasLimit",
+					"type": "uint64"
+				},
+				{
+					"internalType": "bytes",
+					"name": "callbackData",
+					"type": "bytes"
+				}
+			],
+			"name": "requestCallback",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "payable",
+			"type": "function"
+		}
+	]
+}

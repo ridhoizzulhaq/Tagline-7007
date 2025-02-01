@@ -1,0 +1,734 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_server",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_opml",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "input",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "callbackContract",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "gasLimit",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "callbackData",
+						"type": "bytes"
+					}
+				],
+				"name": "AICallbackRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "invoker",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "output",
+						"type": "bytes"
+					}
+				],
+				"name": "AICallbackResult",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "addToBlacklist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "blacklist",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "callbackFunctionSelector",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					}
+				],
+				"name": "claimModelRevenue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasLimit",
+						"type": "uint256"
+					}
+				],
+				"name": "estimateFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "gasPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					}
+				],
+				"name": "getModel",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "modelHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "programHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "fee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "receiver",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "receiverPercentage",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "accumulateRevenue",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct MockAIOracle.ModelData",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "output",
+						"type": "bytes"
+					}
+				],
+				"name": "invokeCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "isFinalized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "modelIDs",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numberOfModels",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "opml",
+				"outputs": [
+					{
+						"internalType": "contract IOpml",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "outputOfRequest",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "removeFromBlacklist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					}
+				],
+				"name": "removeModel",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "input",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "callbackContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "gasLimit",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "callbackData",
+						"type": "bytes"
+					}
+				],
+				"name": "requestCallback",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "requests",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "input",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "callbackContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "gasLimit",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "callbackData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "resetGasPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "resetModelIDs",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "server",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_fee",
+						"type": "uint256"
+					}
+				],
+				"name": "setModelFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					}
+				],
+				"name": "setModelReceiver",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "receiverPercentage",
+						"type": "uint256"
+					}
+				],
+				"name": "setModelReceiverPercentage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "modelHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "programHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "receiverPercentage",
+						"type": "uint256"
+					}
+				],
+				"name": "updateModel",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "updateResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "modelId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "modelHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "programHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "receiverPercentage",
+						"type": "uint256"
+					}
+				],
+				"name": "uploadModel",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"requestCallback(uint256,bytes,address,uint64,bytes)": {
+					"params": {
+						"callbackContract": "address of callback contract",
+						"callbackData": "optional, user-defined data, will send back to the callback function",
+						"gasLimit": "gas limitation of calling the callback function",
+						"input": "input for AI model",
+						"modelId": "ID for AI model"
+					},
+					"returns": {
+						"_0": "requestID"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"AICallbackRequest(address,uint256,uint256,bytes,address,uint64,bytes)": {
+					"notice": "Event emitted upon receiving a callback request through requestCallback."
+				},
+				"AICallbackResult(address,uint256,address,bytes)": {
+					"notice": "Event emitted when the result is uploaded or update."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"requestCallback(uint256,bytes,address,uint64,bytes)": {
+					"notice": "initiate a request in OAO"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/mocks/MockAIOracle.sol": "MockAIOracle"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/IAIOracle.sol": {
+			"keccak256": "0x4109982a910eda89ca73319827a5c1ee888bd88ca1aef9160c21601fe6a1fa81",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c4ed2a4cdb7101ca59ae6132d784ff19a33d469c810f77cd8c6d722bcd9541c6",
+				"dweb:/ipfs/QmPkMy73ppMWeKdnspWyNPcQRfnYzXAZHqs1MoQhNmSLpv"
+			]
+		},
+		"contracts/interfaces/IOpml.sol": {
+			"keccak256": "0x918194f8c82326b85769ad6674724c6ed122a4eb1cde71aa846f6572ffb3c419",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b2ea91924bcc8d4c7469f10b40751dd201b9b674b67d3abc11392d4e3f7a169f",
+				"dweb:/ipfs/QmUAEG6wuegDPJnPp3s2tAYcswEMMxy9NTstQFKYCn53Pi"
+			]
+		},
+		"contracts/mocks/MockAIOracle.sol": {
+			"keccak256": "0x994380355db86bea7f21b366973158ef006f79c78588432b78b83fdfe1d3c019",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a97d9afb6d7d581fcef71cc4bd1ea89b0f3f4a7a36587a82d14e9c5a8acd3d84",
+				"dweb:/ipfs/QmYAy2Az2UooKnFS56KajLBCPnzTqnXwyyJzz7jUcrzHtV"
+			]
+		}
+	},
+	"version": 1
+}
